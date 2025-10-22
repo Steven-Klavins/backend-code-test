@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'checkout'
+require_relative '../lib/checkout'
 
 RSpec.describe Checkout do
   describe '#total' do
@@ -91,13 +91,12 @@ RSpec.describe Checkout do
       end
     end
 
-    context 'when a buy 3 get 1 free offer applies to mangos' do
+    context 'when a buy 3 get 1 free offer applies to mangoes' do
       before do
         4.times { checkout.scan(:mango) }
       end
 
       it 'returns the discounted price for the basket' do
-        pending 'You need to write the code to satisfy this test'
         expect(total).to eq(600)
       end
     end
