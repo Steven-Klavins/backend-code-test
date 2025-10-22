@@ -17,4 +17,22 @@ RSpec.describe DiscountDatabase do
       end
     end
   end
+
+  describe '#one_per_customer?' do
+    context 'when the discount is limited to one per customer' do
+      it 'returns true' do
+        expect(discount_db.one_per_customer?(:pineapple)).to be true
+      end
+    end
+
+    context 'when the discount is not limited to one per customer' do
+      it 'returns false' do
+        expect(discount_db.one_per_customer?(:apple)).to be false
+      end
+
+      it 'returns nil for items excluded from the hash' do
+        expect(discount_db.one_per_customer?(:orange)).to be_nil
+      end
+    end
+  end
 end
