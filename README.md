@@ -32,3 +32,13 @@ The code we have provided uses `rspec` for testing, run it with `bundle exec rsp
 - Deep understanding of OOP principles
 - Good testing practices
 - Bonus: A detailed git commit log to show the refactoring process you went through
+
+## Notes
+
+**AI tooling**
+For this test, I used ChatGPT to assess my solutions and offer feedback for improvements.
+
+**What I would add to this solution in the future**
+* An alternative way of managing money, such as using the [money gem](https://github.com/RubyMoney/money) for money calculations and currency conversion. 
+* A more elegant way to handle one-per-customer restrictions. The solution I implemented serves its purpose, but I can see potential for future improvements in this area. It might be better to use an integer for quantitative values (e.g., two per customer), but this would require further refactoring.
+* Improved handling for edge cases. For instance, in a real-world scenario, the scan function should provide informative feedback to the front end of the application. Currently, it only logs a message if an item is not found.
